@@ -103,8 +103,8 @@ export default function Todo(props) {
           }
           modal
         >
-          <div className="w-full h-full">
-            <WebcamCapture id={props.id} photoedTask={props.photoedTask} />
+          <div className="flex-1 justify-center">
+            <WebcamCapture className="w-full h-full object-cover" id={props.id} photoedTask={props.photoedTask} />
           </div>
         </Popup>
         {/*W07 CAM - Popup View Photo*/}
