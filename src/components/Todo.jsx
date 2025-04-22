@@ -179,10 +179,16 @@ const WebcamCapture = (props) => {
     console.log("cancelPhoto", imgSrc.length, id);
   };
 
+  const videoConstraints = {
+    width: 100,
+    height: 100,
+    facingMode: "user"
+}
+
   return (
     <>
       {!imgSrc && (
-          <Webcam className="h-50 w-50 object-scale-down" audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />
+          <Webcam className="h-50 w-50" audio={false} ref={webcamRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints} />
       )}
       {imgSrc && <img src={imgSrc} />}
       <div className="btn-group">
