@@ -182,9 +182,7 @@ const WebcamCapture = (props) => {
   return (
     <>
       {!imgSrc && (
-        <div className="relative w-full h-full">
           <Webcam className="h-50 w-50 object-scale-down" audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />
-        </div>
       )}
       {imgSrc && <img src={imgSrc} />}
       <div className="btn-group">
