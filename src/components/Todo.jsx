@@ -103,7 +103,7 @@ export default function Todo(props) {
           }
           modal
         >
-          <div>
+          <div className="w-full h-full">
             <WebcamCapture id={props.id} photoedTask={props.photoedTask} />
           </div>
         </Popup>
@@ -180,15 +180,15 @@ const WebcamCapture = (props) => {
   };
 
   const videoConstraints = {
-    width: 100,
-    height: 100,
+    width: 300,
+    height: 400,
     facingMode: "user"
 }
 
   return (
     <>
       {!imgSrc && (
-          <Webcam className="h-50 w-50" audio={false} ref={webcamRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints} />
+          <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints} />
       )}
       {imgSrc && <img src={imgSrc} />}
       <div className="btn-group">
