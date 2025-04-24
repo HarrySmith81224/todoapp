@@ -29,9 +29,9 @@ async function addPhoto(id, imgSrc) {
   );
 }
 
-async function deletePhoto(id) {
+async function deletePhoto(id, imgSrc) {
   try {
-    await db.photos.delete(id);
+    await db.photos.delete(id, imgSrc);
     console.log(`Photo for ${id} successfully deleted`);
   } catch (error) {
     console.log(`Failed to delete photo: ${error}`);
