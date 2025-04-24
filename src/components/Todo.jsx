@@ -77,6 +77,7 @@ export default function Todo(props) {
         />
         <label className="todo-label" htmlFor={props.id}>
           {props.name}
+          <br />
           <a href={props.location.mapURL}>(map)</a> {/*W07 CAM - improvement*/}
           &nbsp; | &nbsp;
           <a href={props.location.smsURL}>(sms)</a> {/*W07 CAM - improvement*/}
@@ -103,8 +104,8 @@ export default function Todo(props) {
           }
           modal
         >
-          <div className="flex-1 justify-center">
-            <WebcamCapture className="w-full h-full object-cover" id={props.id} photoedTask={props.photoedTask} />
+          <div>
+            <WebcamCapture id={props.id} photoedTask={props.photoedTask} />
           </div>
         </Popup>
         {/*W07 CAM - Popup View Photo*/}

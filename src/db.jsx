@@ -29,6 +29,15 @@ async function addPhoto(id, imgSrc) {
   );
 }
 
+async function deletePhoto(id) {
+  try {
+    await db.photos.delete(id);
+    console.log(`Photo for ${id} successfully deleted`);
+  } catch (error) {
+    console.log(`Failed to delete photo: ${error}`);
+  }
+}
+
 function GetPhotoSrc(id) {
   console.log("getPhotoSrc", id);
   const img = useLiveQuery(() => db.photos.where("id").equals(id).toArray());
@@ -36,4 +45,4 @@ function GetPhotoSrc(id) {
   if (Array.isArray(img)) return img[0].imgSrc;
 }
 
-export { addPhoto, GetPhotoSrc };
+export { addPhoto, GetPhotoSrc, deletePhoto };

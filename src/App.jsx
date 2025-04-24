@@ -3,6 +3,7 @@ import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
 import { nanoid } from "nanoid";
+import { deletePhoto } from "./db.jsx";
 
 function usePrevious(value) {
   const ref = useRef(null);
@@ -80,6 +81,8 @@ export default function App(props) {
   }
 
   function deleteTask(id) {
+    deletePhoto(id);
+
     const remainingTasks = tasks.filter((task) => id !== task.id);
     setTasks(remainingTasks);
   }
